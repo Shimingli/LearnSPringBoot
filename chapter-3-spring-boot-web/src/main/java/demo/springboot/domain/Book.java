@@ -60,4 +60,9 @@ public class Book implements Serializable {
     public void setIntroduction(String introduction) {
         this.introduction = introduction;
     }
+
+    @Override
+    public String toString() {
+        return "id:"+id+"  introduction:"+introduction;
+    }
 }

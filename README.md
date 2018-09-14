@@ -89,6 +89,9 @@ spring-data-elasticsearch - 实战案例详解
 
  [《Spring Boot教程与Spring Cloud教程》](https://git.oschina.net/didispace/SpringBoot-Learning "Spring Boot教程与Spring Cloud教程")<br>
  
- 
- *  @EnableSwagger2Doc // 开启 Swagger  https://blog.csdn.net/weixin_37509652/article/details/80094370
- * 配置环境  spring.profiles.active=dev  spring.profiles.active=prod
+ * 20180914
+   *  @EnableSwagger2Doc // 开启 Swagger  https://blog.csdn.net/weixin_37509652/article/details/80094370
+   * 配置环境  spring.profiles.active=dev  spring.profiles.active=prod
+   * Content-Type: application/json; charset=utf-8  put和get的请求 最好都得加上这个这一样，要不然请求不成功 
+   * 模拟数据库，存储 Book 信息
+   * 一个快速开始，一个数据配置，一个是web应用，使用map来当做数据库模拟的 
