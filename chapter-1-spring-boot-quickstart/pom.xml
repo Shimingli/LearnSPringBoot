@@ -38,7 +38,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Lombok  手动加入版本 需要导入的东西  还要加入版本 -->
+        <!-- Lombok  手动加入版本 需要导入的东西  还要加入版本 仕明 加入 注意加入的版本信息 -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
