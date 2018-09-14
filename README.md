@@ -8,9 +8,6 @@ spring boot 实践学习案例，是 spring boot 初学者及核心技术巩固�
 
 [泥瓦匠BYSocket 星球](https://t.zsxq.com/nMzjqbe "泥瓦匠BYSocket")
 
-[泥瓦匠BYSocket 星球](https://t.zsxq.com/nMzjqbe "泥瓦匠BYSocket")
-
-[泥瓦匠BYSocket 星球](https://t.zsxq.com/nMzjqbe "泥瓦匠BYSocket")
 
 这个星球里面讲深入讨论 Java 、Java EE、Spring Boot 等框架技术及工作经验交流，分享一路技术走来的经验、教训。硬实力软实力、择业、职业规划等。
 
@@ -91,3 +88,7 @@ spring-data-elasticsearch - 实战案例详解
 最后，<br/>
 
  [《Spring Boot教程与Spring Cloud教程》](https://git.oschina.net/didispace/SpringBoot-Learning "Spring Boot教程与Spring Cloud教程")<br>
+ 
+ 
+ *  @EnableSwagger2Doc // 开启 Swagger  https://blog.csdn.net/weixin_37509652/article/details/80094370
+ * 配置环境  spring.profiles.active=dev  spring.profiles.active=prod
