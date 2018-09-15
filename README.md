@@ -95,3 +95,9 @@ spring-data-elasticsearch - 实战案例详解
    * Content-Type: application/json; charset=utf-8  put和get的请求 最好都得加上这个这一样，要不然请求不成功 
    * 模拟数据库，存储 Book 信息
    * 一个快速开始，一个数据配置，一个是web应用，使用map来当做数据库模拟的 
+   
+ * 20180915
+    * JPA：表达验证中的user类，就是必须实现JpaRepository
+    * JPA是Java Persistence API的简称，中文名Java持久层API，是JDK 5.0注解或XML描述对象－关系表的映射关系，并将运行期的实体对象持久化到数据库中。
+    * 使用go 写后台，不用去重新启动程序，该资源文件立即生效，但是java 就不行，必须要重新启动 
+    * ModelMap对象主要用于传递控制方法处理数据到结果页面，也就是说我们把结果页面上需要的数据放到ModelMap对象中即可，他的作用类似于request对象的setAttribute方法的作用，用来在一个请求过程中传递处理的数据

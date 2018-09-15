@@ -13,6 +13,7 @@ import spring.boot.core.service.UserService;
 
 import javax.validation.Valid;
 
+
 /**
  * 用户控制层
  *
@@ -29,10 +30,12 @@ public class UserController {
      *  获取用户列表
      *    处理 "/users" 的 GET 请求，用来获取用户列表
      *    通过 @RequestParam 传递参数，进一步实现条件查询或者分页查询
+     *    ModelMap对象主要用于传递控制方法处理数据到结果页面，也就是说我们把结果页面上需要的数据放到ModelMap对象中即可，他的作用类似于request对象的setAttribute方法的作用，用来在一个请求过程中传递处理的数据
      */
     @RequestMapping(method = RequestMethod.GET)
     public String getUserList(ModelMap map) {
         map.addAttribute("userList", userService.findAll());
+        System.out.println("方法执行了 getUserList ");
         return "userList";
     }
 
@@ -46,6 +49,7 @@ public class UserController {
     public String createUserForm(ModelMap map) {
         map.addAttribute("user", new User());
         map.addAttribute("action", "create");
+        System.out.println("方法执行了 createUserForm ");
         return "userForm";
     }
 
@@ -55,10 +59,8 @@ public class UserController {
      *    通过 @ModelAttribute 绑定参数，也通过 @RequestParam 从页面中传递参数
      */
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public String postUser(ModelMap map,
-                           @ModelAttribute @Valid User user,
-                           BindingResult bindingResult) {
-
+    public String postUser(ModelMap map, @ModelAttribute @Valid User user, BindingResult bindingResult) {
+        System.out.println("方法执行了 postUser ");
         if (bindingResult.hasErrors()) {
             map.addAttribute("action", "create");
             return "userForm";
@@ -77,6 +79,7 @@ public class UserController {
      */
     @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
     public String getUser(@PathVariable Long id, ModelMap map) {
+        System.out.println("方法执行了 getUser ");
         map.addAttribute("user", userService.findById(id));
         map.addAttribute("action", "update");
         return "userForm";
@@ -90,7 +93,7 @@ public class UserController {
     public String putUser(ModelMap map,
                           @ModelAttribute @Valid User user,
                           BindingResult bindingResult) {
-
+        System.out.println("方法执行了 putUser ");
         if (bindingResult.hasErrors()) {
             map.addAttribute("action", "update");
             return "userForm";
@@ -105,7 +108,7 @@ public class UserController {
      */
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public String deleteUser(@PathVariable Long id) {
-
+        System.out.println("方法执行了 deleteUser ");
         userService.delete(id);
         return "redirect:/users/";
     }
