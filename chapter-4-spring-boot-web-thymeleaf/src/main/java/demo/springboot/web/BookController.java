@@ -71,7 +71,7 @@ public class BookController {
      * 处理 "/update" 的 PUT 请求，用来更新 Book 信息
      */
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public String putBook(@ModelAttribute Book book) {
+    public String putBook(@ModelAttribute Book book) {//从Form表单或URL参数中获取（实际上，不做此注释也能拿到user对象）
         bookService.update(book);
         return REDIRECT_TO_BOOK_URL;
     }
@@ -81,7 +81,7 @@ public class BookController {
      * 处理 "/book/{id}" 的 GET 请求，用来删除 Book 信息
      */
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-    public String deleteBook(@PathVariable Long id) {
+    public String deleteBook(@PathVariable Long id) {//
         bookService.delete(id);
         return REDIRECT_TO_BOOK_URL;
     }
