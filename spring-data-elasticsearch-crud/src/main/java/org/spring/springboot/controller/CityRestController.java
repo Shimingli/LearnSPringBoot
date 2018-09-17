@@ -8,12 +8,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 /**
  * 城市 Controller 实现 Restful HTTP 服务
  * <p>
  * Created by bysocket on 03/05/2017.
  */
 @RestController
+@EnableSwagger2
 public class CityRestController {
 
     @Autowired

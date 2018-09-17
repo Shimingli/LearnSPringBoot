@@ -1,8 +1,6 @@
-
 package org.spring.springboot.service;
 
 import org.spring.springboot.domain.City;
-
 import java.util.List;
 
 /**
