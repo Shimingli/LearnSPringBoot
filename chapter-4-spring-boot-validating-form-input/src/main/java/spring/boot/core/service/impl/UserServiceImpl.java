@@ -17,7 +17,7 @@ import java.util.List;
  */
 @Service
 public class UserServiceImpl implements UserService {
-
+    // 使用Logger
     private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Autowired
@@ -25,6 +25,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> findAll() {
+
         return userRepository.findAll();
     }
 

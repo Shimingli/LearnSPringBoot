@@ -101,3 +101,10 @@ spring-data-elasticsearch - 实战案例详解
     * JPA是Java Persistence API的简称，中文名Java持久层API，是JDK 5.0注解或XML描述对象－关系表的映射关系，并将运行期的实体对象持久化到数据库中。
     * 使用go 写后台，不用去重新启动程序，该资源文件立即生效，但是java 就不行，必须要重新启动 
     * ModelMap对象主要用于传递控制方法处理数据到结果页面，也就是说我们把结果页面上需要的数据放到ModelMap对象中即可，他的作用类似于request对象的setAttribute方法的作用，用来在一个请求过程中传递处理的数据
+ * 20180917
+    * @Autowired 注释，它可以对类成员变量、方法及构造函数进行标注，完成自动装配的工作。 通过 @Autowired的使用来消除 set ，get方法   
+     * LoggerFactory.getLogger(UserServiceImpl.class) 打印日志  
+     * 在pom文件中增加spring-boot-starter-web的maven依赖时，不做任何web相关的配置便能提供web服务，这还得归于spring boot 自动配置的功能（因为加了EnableAutoConfiguration的注解），帮我们创建了一堆默认的配置 
+     * JPA(Java Persistence API)是Sun官方提出的Java持久化规范 
+     * @Id //@Id 声明属性为主键 @GeneratedValue //@GeneratedValue表示主键是自动生成策略，一般该注释和 @Id 一起使用
+     * @Entity //对实体注释。任何Hibernate映射对象都要有这个注释

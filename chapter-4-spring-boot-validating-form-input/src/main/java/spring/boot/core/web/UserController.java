@@ -34,6 +34,7 @@ public class UserController {
      */
     @RequestMapping(method = RequestMethod.GET)
     public String getUserList(ModelMap map) {
+        System.out.println("map"+map.toString());
         map.addAttribute("userList", userService.findAll());
         System.out.println("方法执行了 getUserList ");
         return "userList";
@@ -82,6 +83,7 @@ public class UserController {
         System.out.println("方法执行了 getUser ");
         map.addAttribute("user", userService.findById(id));
         map.addAttribute("action", "update");
+//        return "userForm";
         return "userForm";
     }
 

@@ -31,7 +31,7 @@
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
-        <!-- Web 依赖 - 包含了 hibernate-validator 依赖-->
+        <!-- Web 依赖 - 包含了 hibernate-validator 依赖  在pom文件中增加spring-boot-starter-web的maven依赖时，不做任何web相关的配置便能提供web服务，这还得归于spring boot 自动配置的功能（因为加了EnableAutoConfiguration的注解），帮我们创建了一堆默认的配置-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
