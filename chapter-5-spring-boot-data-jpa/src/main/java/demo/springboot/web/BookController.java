@@ -30,14 +30,20 @@ public class BookController {
     @RequestMapping(method = RequestMethod.GET)
     public String getBookList(ModelMap map) {
         map.addAttribute("bookList",bookService.findAll());
+        System.out.println("book="+bookService.findAll().toString());
+        if (bookService.findAll().size()>0) {
+            System.out.println("book=" + bookService.findAll().get(0).toString());
+        }
         return BOOK_LIST_PATH_NAME;
     }
 
     /**
      * 获取创建 Book 表单
+     * http://localhost:8080/book/create
      */
     @RequestMapping(value = "/create", method = RequestMethod.GET)
     public String createBookForm(ModelMap map) {
+        System.out.println("create 的get方法 ");
         map.addAttribute("book", new Book());
         map.addAttribute("action", "create");
         return BOOK_FORM_PATH_NAME;
@@ -48,8 +54,10 @@ public class BookController {
      * 处理 "/book/create" 的 POST 请求，用来新建 Book 信息
      * 通过 @ModelAttribute 绑定表单实体参数，也通过 @RequestParam 传递参数
      */
+    //todo 为什么啊
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public String postBook(@ModelAttribute Book book) {
+    public String postBook(@ModelAttribute Book book) { //@ModelAttribute
+        System.out.println("创建 ------------------》"+book.toString());
         bookService.insertByBook(book);
         return REDIRECT_TO_BOOK_URL;
     }

@@ -4,6 +4,7 @@
     <script type="text/javascript" th:src="@{https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js}"></script>
     <link th:href="@{https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet"/>
     <link th:href="@{/css/default.css}" rel="stylesheet"/>
+   <!-- 这个请求时标签的头部-->
     <link rel="icon" th:href="@{/images/favicon.ico}" type="image/x-icon"/>
     <meta charset="UTF-8"/>
     <title>书籍列表</title>
@@ -39,7 +40,7 @@
         </tbody>
     </table>
 
-    <div><a class="btn btn-primary" href="/book/create" role="button">新增书籍</a></div>
+    <div><a class="btn btn-primary" href="/book/create" role="button">新增书籍 ，就会请求create 接口</a></div>
 </div>
 
 </body>

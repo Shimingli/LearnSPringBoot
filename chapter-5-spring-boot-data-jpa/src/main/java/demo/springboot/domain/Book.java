@@ -16,7 +16,7 @@ public class Book implements Serializable {
     /**
      * 编号
      */
-    @Id
+    @Id // 自己增长的 id
     @GeneratedValue
     private Long id;
 
@@ -65,5 +65,10 @@ public class Book implements Serializable {
 
     public void setIntroduction(String introduction) {
         this.introduction = introduction;
+    }
+
+    @Override
+    public String toString() {
+        return "添加的id="+id+"name="+name+"writer="+writer;
     }
 }
