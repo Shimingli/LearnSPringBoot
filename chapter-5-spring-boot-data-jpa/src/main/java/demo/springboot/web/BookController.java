@@ -56,7 +56,7 @@ public class BookController {
      */
     //todo 为什么啊
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public String postBook(@RequestBody Book book) { //@ModelAttribute
+    public String postBook(@ModelAttribute Book book) { //@ModelAttribute
         System.out.println("创建 ------------------》"+book.toString());
         bookService.insertByBook(book);
         return REDIRECT_TO_BOOK_URL;

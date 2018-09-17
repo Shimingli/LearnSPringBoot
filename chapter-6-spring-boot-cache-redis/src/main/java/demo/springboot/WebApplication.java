@@ -10,7 +10,7 @@ import org.springframework.cache.annotation.EnableCaching;
  * Created by bysocket on 30/09/2017.
  */
 @SpringBootApplication
-@EnableCaching
+@EnableCaching //修改Application类，加入启用缓存的注解@EnableCaching
 public class WebApplication {
     public static void main(String[] args) {
         SpringApplication.run(WebApplication.class, args);
