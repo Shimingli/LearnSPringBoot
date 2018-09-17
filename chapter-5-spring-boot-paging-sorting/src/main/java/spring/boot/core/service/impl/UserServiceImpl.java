@@ -22,12 +22,16 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     UserRepository userRepository;
-
+    /*
+     分页查询用户： PageNumber = 0 PageSize = 5 后application.properties 的配置有关
+     */
     @Override
     public Page<User> findByPage(Pageable pageable) {
         LOGGER.info(" \n 分页查询用户："
                 + " PageNumber = " + pageable.getPageNumber()
                 + " PageSize = " + pageable.getPageSize());
+        LOGGER.info(" \n pageable+"+pageable.getSort());
+        LOGGER.info("\n pageable="+pageable.toString());
         return userRepository.findAll(pageable);
     }
 
