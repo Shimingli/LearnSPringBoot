@@ -110,3 +110,8 @@ spring-data-elasticsearch - 实战案例详解
      * @Entity //对实体注释。任何Hibernate映射对象都要有这个注释
      * Thymeleaf
      * 数据分页查询 
+  
+  * 20180918 
+    * 为啥去掉一个mva的依赖代码不会报错？？
+    * 注意在freemarker的工程中，使用Navicat创建数据库的的步骤截图一二三四！！
+       

@@ -20,6 +20,7 @@ public class CityServiceImpl implements CityService {
     private CityDao cityDao;
 
     public List<City> findAllCity(){
+        System.out.println("获取所有的城市 "+cityDao.findAllCity());
         return cityDao.findAllCity();
     }
 

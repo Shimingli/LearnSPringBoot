@@ -21,7 +21,7 @@
     </properties>
 
     <dependencies>
-        <!-- Spring Boot Freemarker 依赖 -->
+        <!-- Spring Boot Freemarker 依赖  如果去掉的话 请求会报错 This application has no explicit mapping for /error, so you are seeing this as a fallback. -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>

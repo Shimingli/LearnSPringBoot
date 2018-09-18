@@ -23,6 +23,7 @@ public class CityController {
     @RequestMapping(value = "/api/city/{id}", method = RequestMethod.GET)
     public String findOneCity(Model model, @PathVariable("id") Long id) {
         model.addAttribute("city", cityService.findCityById(id));
+        // 其实返回的是 resources中的 web中的  city文件
         return "city";
     }
 
