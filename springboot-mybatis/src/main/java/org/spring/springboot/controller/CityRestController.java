@@ -18,8 +18,9 @@ public class CityRestController {
     @Autowired
     private CityService cityService;
 
-    @RequestMapping(value = "/api/city", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/cityName", method = RequestMethod.GET)
     public City findOneCity(@RequestParam(value = "cityName", required = true) String cityName) {
+        System.out.println("cityName="+cityName);
         return cityService.findCityByName(cityName);
     }
 
