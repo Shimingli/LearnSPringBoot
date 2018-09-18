@@ -1,6 +1,8 @@
 ## freemarker  
 * 这个图片很经典了啊  
   ![image](freemarker.png)
+ 
+* [参考博客](https://www.bysocket.com/?p=1666)  
 * 如果需要用到的话，要进行深入的了解[freemarker](http://freemarker.foofun.cn/index.html)
 * FreeMarker是一款模板引擎： 即一种基于模板和要改变的数据，	并用来生成输出文本（HTML网页、电子邮件、配置文件、源代码等）的通用工具。	它不是面向最终用户的，而是一个Java类库，是一款程序员可以嵌入他们所开发产品的组件。
 * FreeMarker 是一款 模板引擎： 即一种基于模板和要改变的数据， 并用来生成输出文本(HTML网页，电子邮件，配置文件，源代码等)的通用工具。 它不是面向最终用户的，而是一个Java类库，是一款程序员可以嵌入他们所开发产品的组件。
@@ -39,3 +41,21 @@ spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 * resources/application.properties - 应用配置文件，应用启动会自动读取配置
 * resources/web - *.ftl文件，是 FreeMarker 文件配置路径。在 application.properties 配置
 * resources/mapper - DAO Maper XML 文件
+
+* 插入数据和创建数据库的SQL语句  
+
+```
+ 插入数据
+INSERT city VALUES (0 ,1000,'温岭市','仕明 的家在温岭。');
+```
+* 插入数据和创建数据库的SQL语句   
+```
+DROP TABLE IF EXISTS  `city`;
+CREATE TABLE `city` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '城市编号',
+  `province_id` int(10) unsigned  NOT NULL COMMENT '省份编号',
+  `city_name` varchar(25) DEFAULT NULL COMMENT '城市名称',
+  `description` varchar(25) DEFAULT NULL COMMENT '描述',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+```
