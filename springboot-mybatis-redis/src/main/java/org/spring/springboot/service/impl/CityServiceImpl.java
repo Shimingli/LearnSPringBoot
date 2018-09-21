@@ -39,19 +39,15 @@ public class CityServiceImpl implements CityService {
         // 从缓存中获取城市信息
         String key = "city_" + id;
         ValueOperations<String, City> operations = redisTemplate.opsForValue();
-
         // 缓存存在
         boolean hasKey = redisTemplate.hasKey(key);
         if (hasKey) {
             City city = operations.get(key);
-
             LOGGER.info("CityServiceImpl.findCityById() : 从缓存中获取了城市 >> " + city.toString());
             return city;
         }
-
         // 从 DB 中获取城市信息
         City city = cityDao.findById(id);
-
         // 插入缓存
         operations.set(key, city, 10, TimeUnit.SECONDS);
         LOGGER.info("CityServiceImpl.findCityById() : 城市插入缓存 >> " + city.toString());
@@ -78,10 +74,8 @@ public class CityServiceImpl implements CityService {
         boolean hasKey = redisTemplate.hasKey(key);
         if (hasKey) {
             redisTemplate.delete(key);
-
             LOGGER.info("CityServiceImpl.updateCity() : 从缓存中删除城市 >> " + city.toString());
         }
-
         return ret;
     }
 

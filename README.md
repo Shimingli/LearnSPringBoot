@@ -114,4 +114,9 @@ spring-data-elasticsearch - 实战案例详解
   * 20180918 
     * 为啥去掉一个mva的依赖代码不会报错？？
     * 注意在freemarker的工程中，使用Navicat创建数据库的的步骤截图一二三四！！
+    
+   * 20180921
+      *  Content-Type: application/json; charset=utf-8  put和get的请求 最好都得加上这个这一样，要不然请求不成功 
+      * 每个工程自己创建了一个README 
+      *  Redis
        
