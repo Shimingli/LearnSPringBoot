@@ -16,7 +16,7 @@ public class CityRestController {
 
     @Autowired
     private CityService cityService;
-
+   //http://localhost:8080/api/city?cityName=温岭市
     @RequestMapping(value = "/api/city", method = RequestMethod.GET)
     public City findOneCity(@RequestParam(value = "cityName", required = true) String cityName) {
         return cityService.findCityByName(cityName);

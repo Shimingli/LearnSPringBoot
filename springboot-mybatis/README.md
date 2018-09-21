@@ -6,4 +6,13 @@
 
 * HTTP 404 错误意味着链接指向的网页不存在，即原始网页的URL失效，这种情况经常会发生，很难避免，比如说：网页URL生成规则改变、网页文件更名或移动位置、导入链接拼写错误等，导致原来的URL地址无法访问；当Web 服务器接到类似请求时，会返回一个404 状态码，告诉浏览器要请求的资源并不存在。
 
-* 失败 
+* 成功
+
+```
+  //http://localhost:8080/api/cityName?cityName=%E6%B8%A9%E5%B2%AD%E5%B8%82
+    @RequestMapping(value = "/api/cityName", method = RequestMethod.GET)
+    public City findOneCity(@RequestParam(value = "cityName", required = true) String cityName) {
+        System.out.println("cityName="+cityName);
+        return cityService.findCityByName(cityName);
+    }
+```
