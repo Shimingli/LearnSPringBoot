@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
@@ -19,10 +18,11 @@ import javax.sql.DataSource;
 @MapperScan(basePackages = ClusterDataSourceConfig.PACKAGE, sqlSessionFactoryRef = "clusterSqlSessionFactory")
 public class ClusterDataSourceConfig {
 
-    // 精确到 cluster 目录，以便跟其他数据源隔离
+     // 精确到 cluster 目录，以便跟其他数据源隔离
+    // todo 很明显，cluster 去看xml的对应文件，去找城市的数据库
     static final String PACKAGE = "org.spring.springboot.dao.cluster";
     static final String MAPPER_LOCATION = "classpath:mapper/cluster/*.xml";
-
+    // 那么这里也应该是去找城市的地方 这个表在shiming的数据库中
     @Value("${cluster.datasource.url}")
     private String url;
 

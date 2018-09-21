@@ -6,7 +6,6 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -24,16 +23,16 @@ public class MasterDataSourceConfig {
     static final String PACKAGE = "org.spring.springboot.dao.master";
     static final String MAPPER_LOCATION = "classpath:mapper/master/*.xml";
 
-    @Value("${master.datasource.url}")
+    @Value("${spring.datasource.url}")
     private String url;
 
-    @Value("${master.datasource.username}")
+    @Value("${spring.datasource.username}")
     private String user;
 
-    @Value("${master.datasource.password}")
+    @Value("${spring.datasource.password}")
     private String password;
 
-    @Value("${master.datasource.driverClassName}")
+    @Value("${spring.datasource.driver-class-name}")
     private String driverClass;
 
     @Bean(name = "masterDataSource")

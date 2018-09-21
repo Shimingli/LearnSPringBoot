@@ -26,8 +26,10 @@ public class UserRestController {
      * @param userName
      * @return
      */
+    //  http://localhost:8080/api/user?userName=E4%BB%95%E6%98%8E%E5%90%8C%E5%AD%A6
     @RequestMapping(value = "/api/user", method = RequestMethod.GET)
     public User findByName(@RequestParam(value = "userName", required = true) String userName) {
+        System.out.println("userName="+userName);
         return userService.findByName(userName);
     }
 

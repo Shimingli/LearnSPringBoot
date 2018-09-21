@@ -22,10 +22,13 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private CityDao cityDao; // 从数据源
 
+    /*
+    根据用户的名称，然后找到这个user，在给与这个user设置一些city，
+     */
     @Override
     public User findByName(String userName) {
         User user = userDao.findByName(userName);
-        City city = cityDao.findByName("温岭市");
+        City city = cityDao.findByName("深圳");
         user.setCity(city);
         return user;
     }
