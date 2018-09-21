@@ -23,7 +23,9 @@ public class CityRestController {
     public City findOneCity(@PathVariable("id") Long id) {
         return cityService.findCityById(id);
     }
-
+    /*
+    http://localhost:8080/api/city
+     */
     @RequestMapping(value = "/api/city", method = RequestMethod.GET)
     public List<City> findAllCity() {
         return cityService.findAllCity();
