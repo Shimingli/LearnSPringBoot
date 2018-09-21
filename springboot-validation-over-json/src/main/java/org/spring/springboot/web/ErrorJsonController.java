@@ -31,6 +31,7 @@ public class ErrorJsonController {
         if (StringUtils.isEmpty(cityName)) {
             throw new GlobalErrorInfoException(CityErrorInfoEnum.PARAMS_NO_COMPLETE);
         }
-        return new ResultBody(new City(1L,2L,"温岭","是我的故乡"));
+        //{"code":"0","message":"success","result":{"id":1,"provinceId":2,"cityName":"温岭","description":"是我的故乡"}}
+        return new ResultBody(new City(1L,2L,"成都","是我的故乡"));
     }
 }

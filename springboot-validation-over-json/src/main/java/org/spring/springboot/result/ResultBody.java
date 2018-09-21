@@ -25,7 +25,7 @@ public class ResultBody {
         this.code = errorInfo.getCode();
         this.message = errorInfo.getMessage();
     }
-
+    // 返回成功了，走到这里来，
     public ResultBody(Object result) {
         this.code = GlobalErrorInfoEnum.SUCCESS.getCode();
         this.message = GlobalErrorInfoEnum.SUCCESS.getMessage();
@@ -54,5 +54,10 @@ public class ResultBody {
 
     public void setResult(Object result) {
         this.result = result;
+    }
+
+    @Override
+    public String toString() {
+        return code+"::"+message;
     }
 }
