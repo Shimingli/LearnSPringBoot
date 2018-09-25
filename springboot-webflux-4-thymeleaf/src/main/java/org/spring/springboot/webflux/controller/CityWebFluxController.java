@@ -45,11 +45,12 @@ public class CityWebFluxController {
     public Mono<Long> deleteCity(@PathVariable("id") Long id) {
         return cityHandler.deleteCity(id);
     }
-
+    // http://localhost:8080/city/hello
     @GetMapping("/hello")
     public Mono<String> hello(final Model model) {
-        model.addAttribute("name", "泥瓦匠");
-        model.addAttribute("city", "浙江温岭");
+        //存入的值
+        model.addAttribute("name", "李仕明");
+        model.addAttribute("city", "广东深圳");
 
         String path = "hello";
         return Mono.create(monoSink -> monoSink.success(path));
@@ -57,6 +58,9 @@ public class CityWebFluxController {
 
     private static final String CITY_LIST_PATH_NAME = "cityList";
 
+
+
+    //http://localhost:8080/city/page/list
     @GetMapping("/page/list")
     public String listPage(final Model model) {
         final Flux<City> cityFluxList = cityHandler.findAllCity();
