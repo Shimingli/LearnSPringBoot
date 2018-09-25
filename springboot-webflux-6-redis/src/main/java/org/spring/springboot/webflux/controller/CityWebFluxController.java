@@ -22,10 +22,11 @@ public class CityWebFluxController {
         ValueOperations<String, City> operations = redisTemplate.opsForValue();
         boolean hasKey = redisTemplate.hasKey(key);
         City city = operations.get(key);
-
         if (!hasKey) {
+            System.out.println("走内存了");
             return Mono.create(monoSink -> monoSink.success(null));
         }
+        System.out.println("没有走内存");
         return Mono.create(monoSink -> monoSink.success(city));
     }
 
@@ -43,6 +44,7 @@ public class CityWebFluxController {
         String key = "city_" + id;
         boolean hasKey = redisTemplate.hasKey(key);
         if (hasKey) {
+
             redisTemplate.delete(key);
         }
         return Mono.create(monoSink -> monoSink.success(id));
