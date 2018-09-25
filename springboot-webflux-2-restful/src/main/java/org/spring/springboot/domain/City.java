@@ -57,4 +57,9 @@ public class City {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "城市的名称"+cityName;
+    }
 }
